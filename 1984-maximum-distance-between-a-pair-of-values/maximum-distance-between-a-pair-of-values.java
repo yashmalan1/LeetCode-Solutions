@@ -6,11 +6,11 @@ class Solution {
             int c_dist=-1;
             if(i<=j && nums1[i]<=nums2[j]){
                 c_dist=j-i;
+                m_Dist=Math.max(m_Dist,c_dist);
             }
             else{
                 i++;
-            }
-            m_Dist=Math.max(m_Dist,c_dist);
+            }            
             j++;
         }
         return m_Dist;
