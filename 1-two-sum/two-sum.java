@@ -8,10 +8,9 @@ class Solution {
                 map.put(nums[i],i);
             }
             else{
-                a=i;
-                b=map.get(n);
+                return new int[] {map.get(n),i};
             }
         }
-        return new int[] {a,b};
+        return new int[] {};
     }
 }
