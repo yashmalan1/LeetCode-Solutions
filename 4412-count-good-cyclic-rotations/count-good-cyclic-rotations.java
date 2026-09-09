@@ -11,12 +11,12 @@ class Solution {
         for(int i=n/2;i<n;i++){
             sum2+=nums[i];
         }
-        if(sum1<sum2) ans++;
+        if(sum1>sum2) ans++;
 
         for(int i=0;i<n-1;i++){
             sum1=sum1-nums[i]+nums[(n/2+i)%n];
             sum2=sum2-nums[(n/2+i)%n]+nums[i];
-            if(sum1<sum2) ans++;
+            if(sum1>sum2) ans++;
         }
         return ans;
     }
