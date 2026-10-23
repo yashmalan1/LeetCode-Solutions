@@ -3,30 +3,21 @@ class Solution {
         int n=grid.length;
         int m=grid[0].length;
 
-        int p=0;
+        int actul=0,extra=0;
 
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j]==1){
-                    //up
-                    if(i-1<0 || grid[i-1][j]==0){
-                        p++;
+                    actul++;
+                    if(i>0 && grid[i-1][j]==1){
+                        extra++;
                     }
-                    //down
-                    if(i+1>=n || grid[i+1][j]==0){
-                        p++;
-                    }
-                    //right
-                    if(j+1>=m || grid[i][j+1]==0){
-                        p++;
-                    }
-                    //left
-                    if(j-1<0 || grid[i][j-1]==0){
-                        p++;
+                    if(j>0 && grid[i][j-1]==1){
+                        extra++;
                     }
                 }
             }
         }
-        return p;
+        return actul*4-extra*2;
     }
 }
