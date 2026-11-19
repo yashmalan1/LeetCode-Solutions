@@ -16,12 +16,6 @@ class Solution {
                 if(ch==')' && top=='('){
                     val_pair++;
                 }
-                else if(ch=='}' && top=='{'){
-                    val_pair++;
-                }
-                else if(ch==']' && top=='['){
-                    val_pair++;
-                }
             }
         }
         return s.length()-val_pair*2;
